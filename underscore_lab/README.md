@@ -11,7 +11,7 @@ _.average([4,6,1,1])
 => 3
 ```
 
-* contains - returns true is a given value is present in an array
+* contains - returns true if a given value is present in an array
 
 ```
 _.contains([7,55,99], 99);
