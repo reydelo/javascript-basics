@@ -119,8 +119,50 @@ var _ = {
       values.push(array[i].name);
     }
     return values;
-  }
+  },
+// PART TWO
+
+  //each - iterates over an array and calls a given function with each element
+  each : function (array, func) {
+  var house = []
+    for (i in array) {
+    house.push(func(array[i]));
+    }
+    return house;
+  },
+
+  // compact - returns a new array with all provided undefined values removed
+  compact : function (array) {
+    for (i in array) {
+      if (array[i] == undefined) {
+        array.splice(i, 1);
+      }
+    }
+    return array
+  },
+
+   // map - returns a new array of values produced by running each element of an array through a given function
+   map : function (array, func) {
+     var newHome = []
+     for (i in array) {
+       newHome.push(func(array[i]));
+     }
+     return newHome;
+   },
+
+   // filter - Looks through each value in the list, returning an array of all the values that pass a truth test
+   filter : function (array, func){
+     var newHome = [];
+     for (i in array) {
+       if (func(array[i]) == true) {
+         newHome.push(array[i]);
+       }
+     }
+     return newHome
+   }
+
 };
+
 console.log(_.average([4,6,1,1]));
 console.log(_.contains([7,55,99], 99));
 console.log(_.first([5, 4, 3, 2, 1]));
@@ -135,3 +177,9 @@ console.log(_.indexOf([1, 2, 3], 2));
 console.log(_.indexOf2([1, 2, 3], 2));
 var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
 console.log(_.pluck(stooges, 'name'));
+//part two logs
+console.log(_.each([[1,2,3],[1,2,3],[1,2,3]], _.shuffle));
+console.log(_.compact([1, "hello", undefined, 3, undefined]));
+console.log(_.map([1, 2, 3], function(num){ return num * 3; }));
+console.log(_.map(["dogs", "before", "cats"], function(str){ return str.toUpperCase(); }));
+console.log(_.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; }));
