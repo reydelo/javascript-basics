@@ -48,5 +48,3 @@ var route = {
   location: "Fancy Land"
 };
 ```
-
-
