@@ -1,44 +1,60 @@
-/*
-
-Hints for the first problem:
-
-  1. Define a function that:
-    - is assigned to a variable named `sum`
-    - has one parameter named `options`
-    - returns the calculated sum of all of the values of all of the options passed in
-
-NOTE: use a `for` loop to make this happen.
-
-*/
-
-// **Prices (use `while` loops here)**
-
-// Users can see the sum of all prices
-var sum = function () {
+////Prices
+//1. sumfunction
+function sum () {
+  options;
   var total = 0;
-  for (var i = 0; i < prices.length; i++) {
-    total += parseInt(prices[i].value);
+  for (var i = 0; i < options.length; i++) {
+    total += parseInt(options[i].value);
   }
   return total;
 }
-// Users can see the number of prices that are selected (the count)
-var count = function () {
+//2.  count the selected prices
+function countSelected (options){
   var count = 0;
-  for (i in prices) {
-    if (prices[i].selected === true) {
+  for (var i = 0; i < options.length; i++) {
+    if (options[i].selected === true) {
       count ++;
     }
   }
   return count;
 }
-// Users can see the sum of the selected prices
-var someSum = function () {
+//3.  sum selected
+function sumSelected (options) {
   var total = 0;
-  for (i in prices) {
-    if (prices[i].selected === true) {
-      total += parseInt(prices[i].value);
+  for (var i = 0; i < options.length; i++) {
+    if (options[i].selected === true) {
+      total += parseInt(options[i].value);
     }
   }
   return total;
 }
-// Users can see the average of all of the prices
+//4. average all the prices
+function averagePrices (options) {
+  var total = 0;
+  for (var i = 0; i < options.length; i++) {
+    total += parseInt(options[i].value);
+  }
+  return total/(options.length);
+}
+//5. average selected prices
+function averageSelected (options) {
+  var total = 0;
+  var numberOfSelections = 0;
+  for (var i = 0; i < options.length; i++) {
+    if (options[i].selected === true) {
+     total += parseInt(options[i].value);
+     numberOfSelections ++;
+    }
+  }
+  return total/(numberOfSelections);
+}
+
+
+///names
+
+//1. show all names, take in a string, return an array; input string of names
+//==> output arrays
+function stringToArray (string) {
+  var namesListArray  = string.split("\n");
+  return namesListArray;
+}
