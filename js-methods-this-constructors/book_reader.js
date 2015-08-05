@@ -1,9 +1,13 @@
 function BookReader(book) {
-  // your code here
+  this.book = book;
+  this.currentPage = 0;
 }
 
 BookReader.prototype.nextPage = function() {
-  // your code here
+  if (this.currentPage !== this.book.length -1) {
+    this.currentPage++;
+  }
+  return this.book[this.currentPage];
 };
 
 BookReader.prototype.previousPage = function() {
